@@ -1,3 +1,4 @@
+const authRoutes = require('./routes/authRoutes');
 const express = require('express');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -37,7 +38,7 @@ app.get('/api/v1/health', (req, res) => {
     environment: process.env.NODE_ENV || 'development',
   });
 });
-
+app.use('/api/v1/auth', authRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
