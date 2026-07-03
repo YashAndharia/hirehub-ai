@@ -63,6 +63,48 @@ const userSchema = new mongoose.Schema(
       trim: true,
       maxlength: [100, 'Location cannot exceed 100 characters'],
     },
+    headline: {
+      type: String,
+      default: '',
+      trim: true,
+      maxlength: [120, 'Headline cannot exceed 120 characters'],
+    },
+
+    phone: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+
+    linkedin: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+
+    github: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+
+    portfolio: {
+      type: String,
+      default: '',
+      trim: true,
+    },
+
+    resumeUrl: {
+      type: String,
+      default: '',
+    },
+
+    profileCompletion: {
+      type: Number,
+      default: 20,
+      min: 0,
+      max: 100,
+    },
     isActive: {
       type: Boolean,
       default: true,

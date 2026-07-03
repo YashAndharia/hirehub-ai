@@ -1,4 +1,5 @@
 const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 const express = require('express');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -39,6 +40,7 @@ app.get('/api/v1/health', (req, res) => {
   });
 });
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/profile', profileRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
