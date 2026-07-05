@@ -16,12 +16,13 @@ const createJob = async (req, res, next) => {
 
 const getAllJobs = async (req, res, next) => {
   try {
-    const jobs = await jobService.getAllJobs();
+    const result = await jobService.getAllJobs(req.query);
 
     res.status(200).json({
       success: true,
       message: 'Jobs fetched successfully',
-      data: jobs,
+      data: result.jobs,
+      pagination: result.pagination,
     });
   } catch (error) {
     next(error);

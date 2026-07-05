@@ -2,6 +2,7 @@ const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const express = require('express');
 const uploadRoutes = require('./routes/uploadRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 const aiRoutes = require('./routes/aiRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
@@ -49,6 +50,7 @@ app.use('/api/v1/jobs', jobRoutes);
 app.use('/api/v1/applications', applicationRoutes);
 app.use('/api/v1/upload', uploadRoutes);
 app.use('/api/v1/ai', aiRoutes);
+app.use('/api/v1/dashboard', dashboardRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
