@@ -1,6 +1,7 @@
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const express = require('express');
+const uploadRoutes = require('./routes/uploadRoutes');
 const jobRoutes = require('./routes/jobRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 const helmet = require('helmet');
@@ -45,6 +46,7 @@ app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/profile', profileRoutes);
 app.use('/api/v1/jobs', jobRoutes);
 app.use('/api/v1/applications', applicationRoutes);
+app.use('/api/v1/upload', uploadRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
